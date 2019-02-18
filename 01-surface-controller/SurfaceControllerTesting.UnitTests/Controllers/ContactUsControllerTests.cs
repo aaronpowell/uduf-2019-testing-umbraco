@@ -66,5 +66,27 @@ namespace SurfaceControllerTesting.UnitTests.Controllers
             Assert.Null(model.Email);
             Assert.Null(model.Message);
         }
+
+        [Fact]
+        public async Task WillSaveDataWhenModelIsValid()
+        {
+            var service = Substitute.For<IContactUsService>();
+
+            var controller = new ContactUsController(service);
+
+            var model = new ContactUsModel
+            {
+                Name = "Aaron",
+                Email = "test@test.com",
+                Message = "Test message"
+            };
+
+            var _ = await controller.PostContactUsAsync(model);
+
+            service
+                .Received()
+                .AddFeedbackAsync(Arg.Is(model.Name), Arg.Is(model.Email), Arg.Is(model.Message))
+                .IgnoreAwaitForNSubstituteAssertion();
+        }
     }
 }
