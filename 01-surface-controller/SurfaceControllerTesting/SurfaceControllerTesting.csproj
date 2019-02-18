@@ -276,6 +276,7 @@
     </Reference>
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Plugins\ContactUs\Controllers\app.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.controller.js" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.htm" />
     <Content Include="App_Plugins\ModelsBuilder\modelsbuilder.resource.js" />
@@ -307,6 +308,7 @@
     <Content Include="Scripts\bootstrap.js" />
     <Content Include="Scripts\bootstrap.min.js" />
     <Content Include="App_Data\Chauffeur\002-CreateContactUsDbTable.delivery" />
+    <Content Include="App_Plugins\ContactUs\package.manifest" />
     <None Include="Scripts\jquery-1.10.2.intellisense.js" />
     <Content Include="Scripts\jquery-1.10.2.js" />
     <Content Include="Scripts\jquery-1.10.2.min.js" />
@@ -316,7 +318,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Chauffeur\ContactUsDbTableDeliverable.cs" />
+    <Compile Include="ContactUsApiModel.cs" />
+    <Compile Include="Controllers\Api\ContactUsController.cs" />
     <Compile Include="Controllers\ContactUsController.cs" />
+    <Compile Include="Controllers\ContactUsTreeController.cs" />
     <Compile Include="Services\IContactUsService.cs" />
     <Compile Include="Models\ContactUsModel.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -364,6 +369,7 @@
     <Content Include="Views\ContactUs\ContactUs.cshtml" />
     <Content Include="Scripts\jquery-1.10.2.min.map" />
     <Content Include="Views\Contact.cshtml" />
+    <Content Include="App_Plugins\ContactUs\BackOffice\contactUsTreeAlias\edit.html" />
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
@@ -376,6 +382,7 @@
     <Analyzer Include="..\packages\Microsoft.CodeAnalysis.Analyzers.1.0.0\analyzers\dotnet\cs\Microsoft.CodeAnalysis.CSharp.Analyzers.dll" />
   </ItemGroup>
   <ItemGroup>
+    <Folder Include="Umbraco\Views\" />
     <Folder Include="Views\TwitterFeed\" />
   </ItemGroup>
   <PropertyGroup>

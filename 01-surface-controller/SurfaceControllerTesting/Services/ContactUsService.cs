@@ -1,17 +1,21 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.Threading.Tasks;
 using Umbraco.Core.Persistence;
 using Umbraco.Core.Persistence.DatabaseAnnotations;
+using Umbraco.Core.Persistence.SqlSyntax;
 
 namespace SurfaceControllerTesting.Services
 {
     public class ContactUsService : IContactUsService
     {
         private readonly UmbracoDatabase database;
+        private readonly ISqlSyntaxProvider sqlSyntaxProvider;
 
-        public ContactUsService(UmbracoDatabase database)
+        public ContactUsService(UmbracoDatabase database, ISqlSyntaxProvider sqlSyntaxProvider)
         {
             this.database = database;
+            this.sqlSyntaxProvider = sqlSyntaxProvider;
         }
 
         public Task<int> AddFeedbackAsync(string name, string email, string message)
@@ -27,6 +31,23 @@ namespace SurfaceControllerTesting.Services
             var result = (int)database.Insert(poco);
 
             return Task.FromResult(result);
+        }
+
+        public Task<ContactUsPoco> GetByIdAsync(int id)
+        {
+            var sql = new Sql()
+                .From<ContactUsPoco>(sqlSyntaxProvider)
+                .Where<ContactUsPoco>(m => m.Id == id, sqlSyntaxProvider);
+
+            return Task.FromResult(database.SingleOrDefault<ContactUsPoco>(sql));
+        }
+
+        public Task<List<ContactUsPoco>> GetFeedbackAsync()
+        {
+            var sql = new Sql()
+                .From<ContactUsPoco>(sqlSyntaxProvider);
+
+            return Task.FromResult(database.Fetch<ContactUsPoco>(sql));
         }
 
         [TableName("ContactUsResponses")]

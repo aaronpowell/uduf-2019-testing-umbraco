@@ -17,7 +17,7 @@ namespace SurfaceControllerTesting.Controllers
 
         public ContactUsController()
         {
-            this.service = new ContactUsService(ApplicationContext.DatabaseContext.Database);
+            this.service = new ContactUsService(ApplicationContext.DatabaseContext.Database, ApplicationContext.DatabaseContext.SqlSyntax);
         }
 
         public ContactUsController(IContactUsService service)
