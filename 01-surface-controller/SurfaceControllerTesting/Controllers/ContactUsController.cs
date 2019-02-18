@@ -13,23 +13,23 @@ namespace SurfaceControllerTesting.Controllers
 {
     public class ContactUsController : SurfaceController
     {
-        private readonly ContactUsService service;
+        private readonly IContactUsService service;
 
         public ContactUsController()
         {
             this.service = new ContactUsService(ApplicationContext.DatabaseContext.Database);
         }
 
-        public ContactUsController(ContactUsService service)
+        public ContactUsController(IContactUsService service)
         {
             this.service = service;
         }
 
         [HttpGet]
         [ActionName("ContactUs")]
-        public ActionResult RenderContactUs()
+        public Task<PartialViewResult> RenderContactUsTask()
         {
-            return PartialView(new ContactUsModel());
+            return Task.FromResult(PartialView(new ContactUsModel()));
         }
 
         [HttpPost]
