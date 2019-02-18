@@ -237,6 +237,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controllers\ContactUsControllerTests.cs" />
+    <Compile Include="Controllers\ContactUsTreeControllerTests.cs" />
     <Compile Include="NSubstituteHelper.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
