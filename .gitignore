@@ -7,3 +7,6 @@ Views
 Media
 scripts
 App_Plugins
+*.user
+Content
+fonts
