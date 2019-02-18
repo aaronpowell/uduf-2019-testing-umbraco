@@ -3,3 +3,7 @@ obj
 .vs
 App_Data
 packages
+Views
+Media
+scripts
+App_Plugins
