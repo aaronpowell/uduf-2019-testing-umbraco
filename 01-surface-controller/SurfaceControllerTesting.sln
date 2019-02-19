@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfaceControllerTesting", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfaceControllerTesting.UnitTests", "SurfaceControllerTesting.UnitTests\SurfaceControllerTesting.UnitTests.csproj", "{6AF0CEA8-BBBD-46C9-A5FE-7F615C7E5427}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SurfaceControllerTesting.IntegrationTests", "SurfaceControllerTesting.IntegrationTests\SurfaceControllerTesting.IntegrationTests.csproj", "{D145E325-1954-490C-A3D7-4518AF7AF32B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{6AF0CEA8-BBBD-46C9-A5FE-7F615C7E5427}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6AF0CEA8-BBBD-46C9-A5FE-7F615C7E5427}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6AF0CEA8-BBBD-46C9-A5FE-7F615C7E5427}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D145E325-1954-490C-A3D7-4518AF7AF32B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D145E325-1954-490C-A3D7-4518AF7AF32B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D145E325-1954-490C-A3D7-4518AF7AF32B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D145E325-1954-490C-A3D7-4518AF7AF32B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

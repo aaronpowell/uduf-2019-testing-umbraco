@@ -28,9 +28,9 @@ namespace SurfaceControllerTesting.Services
                 CreatedDate = DateTime.Now
             };
 
-            var result = (int)database.Insert(poco);
+            var result = database.Insert(poco).ToString();
 
-            return Task.FromResult(result);
+            return Task.FromResult(int.Parse(result));
         }
 
         public Task<ContactUsPoco> GetByIdAsync(int id)
