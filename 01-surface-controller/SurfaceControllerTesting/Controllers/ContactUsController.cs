@@ -13,14 +13,14 @@ namespace SurfaceControllerTesting.Controllers
 {
     public class ContactUsController : SurfaceController
     {
-        private readonly IContactUsService service;
+        private readonly ContactUsService service;
 
         public ContactUsController()
         {
             this.service = new ContactUsService(ApplicationContext.DatabaseContext.Database);
         }
 
-        public ContactUsController(IContactUsService service)
+        public ContactUsController(ContactUsService service)
         {
             this.service = service;
         }
