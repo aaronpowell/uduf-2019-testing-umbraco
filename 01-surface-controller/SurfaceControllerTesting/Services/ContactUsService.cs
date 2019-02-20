@@ -14,7 +14,7 @@ namespace SurfaceControllerTesting.Services
             this.database = database;
         }
 
-        public Task<int> AddFeedbackAsync(string name, string email, string message)
+        public Task<decimal> AddFeedbackAsync(string name, string email, string message)
         {
             var poco = new ContactUsPoco
             {
@@ -24,7 +24,7 @@ namespace SurfaceControllerTesting.Services
                 CreatedDate = DateTime.Now
             };
 
-            var result = (int)database.Insert(poco);
+            var result = (decimal)database.Insert(poco);
 
             return Task.FromResult(result);
         }

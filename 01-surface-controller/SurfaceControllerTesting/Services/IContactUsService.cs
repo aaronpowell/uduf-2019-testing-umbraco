@@ -4,6 +4,6 @@ namespace SurfaceControllerTesting.Services
 {
     public interface IContactUsService
     {
-        Task<int> AddFeedbackAsync(string name, string email, string message);
+        Task<decimal> AddFeedbackAsync(string name, string email, string message);
     }
 }
