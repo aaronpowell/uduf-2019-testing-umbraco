@@ -1,21 +1,14 @@
 ﻿using Chauffeur.TestingTools;
-using NSubstitute;
-using SurfaceControllerTesting.Controllers;
 using SurfaceControllerTesting.Models;
 using SurfaceControllerTesting.Services;
 using System.Linq;
 using System.Threading.Tasks;
-using System.Web;
 using Umbraco.Core;
-using Umbraco.Core.Configuration;
-using Umbraco.Web;
-using Umbraco.Web.Routing;
-using Umbraco.Web.Security;
 using Xunit;
 
-namespace SurfaceControllerTesting.IntegrationTests.Controllers
+namespace SurfaceControllerTesting.IntegrationTests.Services
 {
-    public class ContactUsTreeControllerTests : UmbracoHostTestBase
+    public class ContactUsServiceTests : UmbracoHostTestBase
     {
         [Fact]
         public async Task CanGetFeedbackFromDb()
